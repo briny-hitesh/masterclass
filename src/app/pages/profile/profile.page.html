@@ -23,7 +23,7 @@
     </ion-item>
   </ion-list>
   <div class="ion-padding">
-    <ion-button shape="round" [routerLink]="'/'" color="dark" class="ion-margin-top" expand="block">
+    <ion-button shape="round" (click)="signOut()" [routerLink]="'/'" color="dark" class="ion-margin-top" expand="block">
       Sign out
     </ion-button>
   </div>

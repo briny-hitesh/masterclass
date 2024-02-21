@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { canActivateFunction } from '@core/guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -12,6 +13,7 @@ export const routes: Routes = [
   },
   {
     path: 'tabs',
-    loadChildren: () => import('./tabs/tabs.routes').then( m => m.TabRoutes)
+    loadChildren: () => import('./tabs/tabs.routes').then( m => m.TabRoutes),
+    canActivate: [canActivateFunction]
   },
 ];

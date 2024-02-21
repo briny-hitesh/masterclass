@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { ROUTES } from '@core/constants/routes.constant';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -10,4 +11,10 @@ import { IonicModule } from '@ionic/angular';
     imports: [IonicModule, RouterLink],
 })
 export class ProfilePage {
+    #router: Router = inject(Router);
+
+    signOut(): void {
+        localStorage.clear();
+        this.#router.navigateByUrl(`/${ROUTES.LOGIN}`);
+    }
 }

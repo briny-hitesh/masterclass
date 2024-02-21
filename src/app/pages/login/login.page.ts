@@ -27,6 +27,7 @@ export class LoginPage {
    */
   signIn(): void {
     if (this.username && this.password && this.password === 'dummy123') {
+      localStorage.setItem('token', 'test')
       this.#router.navigateByUrl(`/${ROUTES.TABS}/${ROUTES.HOME}`);
     } else {
       this.#toast.create({
