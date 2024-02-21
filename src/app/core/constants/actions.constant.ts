@@ -7,6 +7,6 @@ export const ACTIONS = [
     },
     {
         icon: 'notifications',
-        url: `${ROUTES.NOTIFICATIONS}`,
+        url: `/${ROUTES.TABS}/${ROUTES.NOTIFICATIONS}`,
     },
 ]
