@@ -1,0 +1,15 @@
+
+ion-tab-bar {
+    --color: #cbc0f8;
+    --background: #7a60de;
+    --color-selected: #fff;
+
+    border-radius: 7rem;
+    box-shadow: 0 0 0.7rem rgba(122, 96, 222, 0.8);
+    border: 0.13rem solid #6145d0;
+    margin: 0.4rem;
+
+    ion-icon {
+        font-size: 1.2rem;
+    }
+}

@@ -1,12 +1,10 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule, CurrencyPipe, SlicePipe } from '@angular/common';
-import { bookmarkOutline, bookmark, cart, notifications } from 'ionicons/icons';
 import { Course } from '@core/model/course.model';
 
 import { IonicModule } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 import { ACTIONS } from '@core/constants/actions.constant';
-import { addIcons } from 'ionicons';
 import { DataService } from '@core/services/data.service';
 
 const imports = [
@@ -25,9 +23,7 @@ export class HomePage implements OnInit {
   courses = this.#dataService.courses;
   actions = ACTIONS;
 
-  constructor() {
-    addIcons({ bookmarkOutline, bookmark, cart, notifications })
-  }
+  constructor() {}
 
   ngOnInit(): void {
     this.#dataService.addCourses(

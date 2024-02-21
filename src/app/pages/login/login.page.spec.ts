@@ -30,7 +30,7 @@ describe('LoginPage', () => {
     component.signIn();
     expect(mockToast).toHaveBeenCalled();
     expect(mockToast).toHaveBeenCalledWith({
-      message: 'Look like you have entered invalid username or password.',
+      message: 'Invalid credentials!',
       ...TOAST_CONFIG
     });
   });

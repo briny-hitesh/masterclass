@@ -27,10 +27,10 @@ export class LoginPage {
    */
   signIn(): void {
     if (this.username && this.password && this.password === 'dummy123') {
-      this.#router.navigateByUrl(`/${ROUTES.HOME}`);
+      this.#router.navigateByUrl(`/${ROUTES.TABS}/${ROUTES.HOME}`);
     } else {
       this.#toast.create({
-        message: 'Look like you have entered invalid username or password.',
+        message: 'Invalid credentials!',
         ...TOAST_CONFIG,
       }).then(modal => modal.present());
     }
