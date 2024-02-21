@@ -1,0 +1,9 @@
+@if(wishlistIds().includes(id)) {
+  <ion-button slot="icon-only" (click)="removeFromWishlist(id)" fill="clear" color="dark">
+    <ion-icon name="bookmark"></ion-icon>
+  </ion-button>
+} @else {
+  <ion-button slot="icon-only" (click)="addToWishlist(id)" fill="clear" color="dark">
+    <ion-icon name="bookmark-outline"></ion-icon>
+  </ion-button>
+}
