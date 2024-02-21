@@ -1,0 +1,46 @@
+<ion-header [translucent]="true" class="ion-no-border">
+    <ion-toolbar color="secondary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+      </ion-buttons>
+      <ion-title></ion-title>
+    </ion-toolbar>
+</ion-header>
+  
+<ion-content [fullscreen]="true">
+  <ion-card color="secondary" class="ion-no-margin">
+    <ion-card-content>
+      <ion-row class="ion-justify-content-center">
+        <ion-col>
+            <h2><strong>Checkout</strong></h2>
+        </ion-col>
+        @if (totalAmount()) {
+          <ion-col size="8" class="ion-text-right">
+            {{totalAmount() | currency: 'INR'}}
+          </ion-col>
+        }
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-list lines="full" [inset]="false">
+    @for (course of cartItems(); track course.courseName) {
+      <ion-item [button]="true" detail="false">
+        <ion-label>
+          <h3>{{course.courseName}}</h3>
+          <p>
+            @if (course.discountPercentage){ 
+              <small class="line-through">{{course.actualPrice | currency: course.currency}}</small>
+            }
+            </p>
+        </ion-label>
+        <div slot="end" class="metadata-end-wrapper">
+          {{ course.getEffectivePrice | currency: course.currency}}
+        </div>
+      </ion-item>
+    } @empty {
+      <h2>Missing Cart items?</h2>
+      <p>Explore our wide selection and find something you like.</p>
+    }
+  </ion-list>
+</ion-content>
+  

@@ -17,6 +17,10 @@ export const TabRoutes: Routes = [
         loadComponent: () => import('@pages/courses/courses.page').then(p => p.CoursesPage)
       },
       {
+        path: ROUTES.CHECKOUT,
+        loadComponent: () => import('@pages/checkout/checkout.page').then(p => p.CheckoutPage)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
