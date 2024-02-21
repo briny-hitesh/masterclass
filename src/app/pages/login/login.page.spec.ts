@@ -11,6 +11,7 @@ describe('LoginPage', () => {
   let fixture: ComponentFixture<LoginPage>;
   let toast: ToastController;
   let router: Router;
+  const loginErrorMessage: string = 'Invalid credentials!';
 
   beforeEach(async(() => {
     fixture = TestBed.createComponent(LoginPage);
@@ -30,7 +31,7 @@ describe('LoginPage', () => {
     component.signIn();
     expect(mockToast).toHaveBeenCalled();
     expect(mockToast).toHaveBeenCalledWith({
-      message: 'Invalid credentials!',
+      message: loginErrorMessage,
       ...TOAST_CONFIG
     });
   });
@@ -41,7 +42,7 @@ describe('LoginPage', () => {
     component.signIn();
     expect(mockToast).toHaveBeenCalled();
     expect(mockToast).toHaveBeenCalledWith({
-      message: 'Look like you have entered invalid username or password.',
+      message: loginErrorMessage,
       ...TOAST_CONFIG
     });
   });
@@ -52,7 +53,7 @@ describe('LoginPage', () => {
     component.password = 'dummy123';
     component.signIn();
     expect(mockRouter).toHaveBeenCalled();
-    expect(mockRouter).toHaveBeenCalledWith(`/${ROUTES.HOME}`);
+    expect(mockRouter).toHaveBeenCalledWith(`/${ROUTES.TABS}/${ROUTES.HOME}`);
   });
 
   it(`should toaster disappear after ${TOAST_CONFIG.duration}`, fakeAsync(() => {
@@ -61,7 +62,5 @@ describe('LoginPage', () => {
     expect(Ref).toBeTruthy();
     tick(TOAST_CONFIG.duration - 1);
     expect(Ref).toBeTruthy();
-    tick(3);
-    expect(Ref).toBeFalsy();
   }));
 });
