@@ -6,9 +6,10 @@ import { IonicModule } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 import { ACTIONS } from '@core/constants/actions.constant';
 import { DataService } from '@core/services/data.service';
+import { CartIconButtonComponent } from '@core/components/cart-icon-button/cart-icon-button.component';
 
 const imports = [
-  IonicModule, CommonModule, CurrencyPipe, SlicePipe, RouterLink,
+  IonicModule, CommonModule, CurrencyPipe, SlicePipe, RouterLink, CartIconButtonComponent
 ]
 
 @Component({

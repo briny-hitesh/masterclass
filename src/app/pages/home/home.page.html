@@ -47,9 +47,8 @@
             <ion-button fill="clear" color="dark">
               <ion-icon slot="icon-only" name="bookmark-outline"></ion-icon>
             </ion-button>
-            <ion-button fill="clear" color="dark">
-              <ion-icon slot="icon-only" name="cart"></ion-icon>
-            </ion-button>
+            
+            <app-cart-icon-button [id]="course.id"></app-cart-icon-button>
           </div>
         </ion-item>
       } @empty {
