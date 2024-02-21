@@ -6,6 +6,7 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalo
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 if (environment.production) {
   enableProdMode();
@@ -17,6 +18,7 @@ bootstrapApplication(AppComponent, {
     provideIonicAngular({
       mode: 'md',
     }),
+    provideHttpClient(withInterceptorsFromDi()),
     provideRouter(routes),
   ],
 });

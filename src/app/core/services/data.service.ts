@@ -1,4 +1,4 @@
-import { Injectable, signal } from "@angular/core";
+import { Injectable, Signal, signal } from "@angular/core";
 import { Course } from "@core/model/course.model";
 
 @Injectable({
@@ -6,7 +6,7 @@ import { Course } from "@core/model/course.model";
 })
 
 export class DataService {
-    courses = signal<Course[]>([]);
+    readonly courses = signal<Course[]>([]);
 
     addCourses(courses: Course[]) {
         this.courses.update(() => courses);
