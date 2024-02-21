@@ -2,7 +2,6 @@ import { Component, OnInit, inject } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { ROUTES } from '@core/constants/routes.constant';
 import { CoursesService } from '@core/services/courses.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-tabs',
