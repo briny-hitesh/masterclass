@@ -7,9 +7,10 @@ import { RouterLink } from '@angular/router';
 import { ACTIONS } from '@core/constants/actions.constant';
 import { DataService } from '@core/services/data.service';
 import { CartIconButtonComponent } from '@core/components/cart-icon-button/cart-icon-button.component';
+import { WishlistIconButtonComponent } from '@core/components/wishlist-icon-button/wishlist-icon-button.component';
 
 const imports = [
-  IonicModule, CommonModule, CurrencyPipe, SlicePipe, RouterLink, CartIconButtonComponent
+  IonicModule, CommonModule, CurrencyPipe, SlicePipe, RouterLink, CartIconButtonComponent, WishlistIconButtonComponent,
 ]
 
 @Component({

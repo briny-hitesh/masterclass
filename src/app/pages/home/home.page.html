@@ -44,10 +44,7 @@
               {{ course.getEffectivePrice | currency: course.currency}}</p>
           </ion-label>
           <div slot="end" class="metadata-end-wrapper">
-            <ion-button fill="clear" color="dark">
-              <ion-icon slot="icon-only" name="bookmark-outline"></ion-icon>
-            </ion-button>
-            
+            <app-wishlist-icon-button [id]="course.id"></app-wishlist-icon-button>
             <app-cart-icon-button [id]="course.id"></app-cart-icon-button>
           </div>
         </ion-item>
