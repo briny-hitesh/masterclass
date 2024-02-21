@@ -1,9 +1,9 @@
 @if(wishlistIds().includes(id)) {
-  <ion-button slot="icon-only" (click)="removeFromWishlist(id)" fill="clear" color="dark">
-    <ion-icon name="bookmark"></ion-icon>
+  <ion-button (click)="removeFromWishlist(id)" fill="clear" color="dark">
+    <ion-icon slot="icon-only" name="bookmark"></ion-icon>
   </ion-button>
 } @else {
-  <ion-button slot="icon-only" (click)="addToWishlist(id)" fill="clear" color="dark">
-    <ion-icon name="bookmark-outline"></ion-icon>
+  <ion-button (click)="addToWishlist(id)" fill="clear" color="dark">
+    <ion-icon slot="icon-only" name="bookmark-outline"></ion-icon>
   </ion-button>
 }
