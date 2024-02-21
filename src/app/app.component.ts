@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { bookmarkOutline, bookmark, cart, notifications, home, book, person } from 'ionicons/icons';
+import { bookmarkOutline, bookmark, cart, notifications, home, book, person, chevronForwardCircle } from 'ionicons/icons';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -10,6 +10,6 @@ import { bookmarkOutline, bookmark, cart, notifications, home, book, person } fr
 })
 export class AppComponent {
   constructor() {
-    addIcons({ bookmarkOutline, bookmark, cart, notifications, home, book, person });
+    addIcons({ bookmarkOutline, bookmark, cart, notifications, home, book, person, chevronForwardCircle });
   }
 }

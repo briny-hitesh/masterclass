@@ -1,0 +1,9 @@
+@if(cartItemsIds().includes(id)) {
+  <ion-button slot="icon-only" routerLink="/tabs/cart" fill="clear" color="secondary">
+    <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+  </ion-button>
+} @else {
+  <ion-button slot="icon-only" (click)="addToCart(id)" fill="clear" color="dark">
+    <ion-icon name="cart"></ion-icon>
+  </ion-button>
+}
