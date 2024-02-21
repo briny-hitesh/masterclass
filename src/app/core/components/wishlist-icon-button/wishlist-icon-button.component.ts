@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
-import { WishlistService } from '../../services/wishlist.service';
+import { WishlistService } from '@core/services/wishlist.service';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
