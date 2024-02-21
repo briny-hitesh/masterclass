@@ -14,11 +14,11 @@ export class WishlistIconButtonComponent {
   #wishlistService: WishlistService = inject(WishlistService);
   wishlistIds = this.#wishlistService.wishlistID;
 
-  addToWishlist(id: number): void {
-    this.#wishlistService.addWishlist(id);
+  addToWishlist(): void {
+    this.#wishlistService.addWishlist(this.id);
   }
 
-  removeFromWishlist(id: number): void {
-    this.#wishlistService.removeWishlist(id);
+  removeFromWishlist(): void {
+    this.#wishlistService.removeWishlist(this.id);
   }
 }
