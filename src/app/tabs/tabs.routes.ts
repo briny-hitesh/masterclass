@@ -25,6 +25,10 @@ export const TabRoutes: Routes = [
         loadComponent: () => import('@pages/wishlist/wishlist.page').then(p => p.WishlistPage)
       },
       {
+        path: ROUTES.NOTIFICATIONS,
+        loadComponent: () => import('@pages/notification/notification.page').then(p => p.NotificationPage)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
