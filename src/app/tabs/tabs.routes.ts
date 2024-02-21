@@ -13,6 +13,10 @@ export const TabRoutes: Routes = [
         loadComponent: () => import('@pages/home/home.page').then(p => p.HomePage)
       },
       {
+        path: ROUTES.COURSES,
+        loadComponent: () => import('@pages/courses/courses.page').then(p => p.CoursesPage)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
