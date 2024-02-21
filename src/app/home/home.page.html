@@ -1,20 +1,63 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
     <ion-title>
-      Blank
+      <small>Hello Hitesh,</small>
     </ion-title>
+    <ion-buttons slot="end">
+      @for (action of actions; track action.url) {
+        <ion-button slot="icon-only" [routerLink]="action.url">
+          <ion-icon [name]="action.icon"></ion-icon>
+        </ion-button>
+      }
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <ion-card color="secondary" class="ion-no-margin">
+    <ion-card-header>
+      <ion-card-title>CSS basic class...</ion-card-title>
+      <ion-card-subtitle>Course will guide you about basic concept of CSS.</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-progress-bar color="light" value="0.2"></ion-progress-bar>
+        </ion-col>
+        <ion-col size="2" class="ion-text-right">
+          <ion-badge color="secondary">2/10</ion-badge>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <div class="ion-padding-horizontal">
+    <h4 class="ion-margin-top ion-padding-top">Courses</h4>
+    <ion-list lines="full" [inset]="false">
+      @for (course of courses() | slice:0:6; track course.courseName) {
+        <ion-item [button]="true" detail="false">
+          <ion-label>
+            <h3>{{course.courseName}}</h3>
+            <p>
+              @if (course.discountPercentage){ 
+                <small class="line-through">{{course.actualPrice | currency: course.currency}}</small>
+              }
+              {{ course.getEffectivePrice | currency: course.currency}}</p>
+          </ion-label>
+          <div slot="end" class="metadata-end-wrapper">
+            <ion-button fill="clear" color="dark">
+              <ion-icon slot="icon-only" name="bookmark-outline"></ion-icon>
+            </ion-button>
+            <ion-button fill="clear" color="dark">
+              <ion-icon slot="icon-only" name="cart"></ion-icon>
+            </ion-button>
+          </div>
+        </ion-item>
+      } @empty {
+        <div class="ion-padding">
+          <h2>No courses</h2>
+        </div>
+      }
+    </ion-list>
   </div>
+
 </ion-content>
