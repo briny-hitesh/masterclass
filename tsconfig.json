@@ -16,13 +16,22 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2022",
-    "module": "es2020",
+    "target": "ES2022",
+    "module": "ES2022",
     "lib": ["es2018", "dom"],
+    "paths": {
+      "@pages/*": [
+        "src/app/pages/*"
+      ],
+      "@core/*": [
+        "src/app/core/*"
+      ]
+    },
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
+    "preserveWhitespaces": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
