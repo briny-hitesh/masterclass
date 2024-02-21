@@ -29,6 +29,10 @@ export const TabRoutes: Routes = [
         loadComponent: () => import('@pages/notification/notification.page').then(p => p.NotificationPage)
       },
       {
+        path: ROUTES.PROFILE,
+        loadComponent: () => import('@pages/profile/profile.page').then(p => p.ProfilePage)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
