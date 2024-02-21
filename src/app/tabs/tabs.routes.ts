@@ -21,6 +21,10 @@ export const TabRoutes: Routes = [
         loadComponent: () => import('@pages/checkout/checkout.page').then(p => p.CheckoutPage)
       },
       {
+        path: ROUTES.WISHLIST,
+        loadComponent: () => import('@pages/wishlist/wishlist.page').then(p => p.WishlistPage)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'

@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>Wishlist</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="secondary">
+      <ion-title size="large">Wishlist</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list lines="full" [inset]="false">
+    @for (course of wishlist(); track course.courseName) {
+      <ion-item [button]="true" detail="false">
+        <ion-label>
+          <h3>{{course.courseName}}</h3>
+          <p>
+            @if (course.discountPercentage){ 
+              <small class="line-through">{{course.actualPrice | currency: course.currency}}</small>
+            }
+            {{ course.getEffectivePrice | currency: course.currency}}</p>
+        </ion-label>
+        <div slot="end" class="metadata-end-wrapper">
+          <app-wishlist-icon-button [id]="course.id"></app-wishlist-icon-button>
+          <app-cart-icon-button [id]="course.id"></app-cart-icon-button>
+        </div>
+      </ion-item>
+    } @empty {
+      <div class="ion-padding ion-text-center">
+        <ion-icon size="large" name="information-circle-outline"></ion-icon>
+        <h4>Empty Wishlist</h4>
+        <p>You have no courses in your wishlist. Start adding!</p>
+      </div>
+    }
+  </ion-list>
+</ion-content>
