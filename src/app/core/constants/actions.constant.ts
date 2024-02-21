@@ -3,7 +3,7 @@ import { ROUTES } from "./routes.constant";
 export const ACTIONS = [
     {
         icon: 'cart',
-        url: `/${ROUTES.CART}`,
+        url: `/${ROUTES.TABS}/${ROUTES.CHECKOUT}`,
     },
     {
         icon: 'notifications',

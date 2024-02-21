@@ -1,5 +1,5 @@
 @if(cartItemsIds().includes(id)) {
-  <ion-button routerLink="/tabs/cart" fill="clear" color="secondary">
+  <ion-button [routerLink]="checkoutRoute" fill="clear" color="secondary">
     <ion-icon slot="icon-only" name="chevron-forward-circle-outline"></ion-icon>
   </ion-button>
 } @else {
